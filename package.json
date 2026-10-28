@@ -1,0 +1,23 @@
+{
+  "name": "imovies",
+  "version": "1.0.0",
+  "description": "IMovies - Seamless Online Cinema Booking & Management System (MERN Stack)",
+  "scripts": {
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && node server.js"
+  },
+  "keywords": [
+    "mern",
+    "movies",
+    "cinema",
+    "booking",
+    "socket.io",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "IMovies Team",
+  "license": "ISC"
+}

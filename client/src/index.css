@@ -1,0 +1,276 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-color: #e50914;
+  --primary-hover: #b80710;
+  --accent-gold: #f59e0b;
+  --accent-cyan: #06b6d4;
+  --bg-dark: #0b0f19;
+  --bg-card: #131b2e;
+  --bg-card-hover: #1e293b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-muted: #94a3b8;
+  --silver-seat: #94a3b8;
+  --gold-seat: #f59e0b;
+  --platinum-seat: #818cf8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark) !important;
+  color: #f8fafc !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism Cards */
+.cinema-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+}
+
+.cinema-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 9, 20, 0.15);
+  border-color: rgba(229, 9, 20, 0.35);
+}
+
+.cinema-card-static {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+/* Red Cinema Button */
+.btn-cinema {
+  background: linear-gradient(135deg, #e50914 0%, #b80710 100%);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.35);
+}
+
+.btn-cinema:hover {
+  background: linear-gradient(135deg, #f41b26 0%, #cc0a13 100%);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-cinema:active {
+  transform: translateY(1px);
+}
+
+.btn-outline-cinema {
+  color: #e50914 !important;
+  border: 1px solid #e50914;
+  background: transparent;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-cinema:hover {
+  background: #e50914;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.35);
+}
+
+/* Badge styles */
+.badge-rating {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-weight: 600;
+}
+
+.badge-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.78rem;
+}
+
+/* Screen Curve effect */
+.cinema-screen-container {
+  perspective: 400px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cinema-screen-curve {
+  height: 18px;
+  width: 75%;
+  max-width: 650px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.7), rgba(56, 189, 248, 0.1));
+  border-top: 3px solid #38bdf8;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+  transform: rotateX(-15deg);
+}
+
+.screen-text {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+/* Seat Buttons */
+.seat-btn {
+  width: 34px;
+  height: 32px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 3px;
+  border-radius: 6px 6px 3px 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.seat-silver {
+  background: rgba(148, 163, 184, 0.18);
+  border-color: rgba(148, 163, 184, 0.4);
+  color: #e2e8f0;
+}
+.seat-silver:hover:not(:disabled) {
+  background: rgba(148, 163, 184, 0.4);
+  transform: scale(1.1);
+}
+
+.seat-gold {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.45);
+  color: #fde68a;
+}
+.seat-gold:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.4);
+  transform: scale(1.1);
+}
+
+.seat-platinum {
+  background: rgba(129, 140, 248, 0.2);
+  border-color: rgba(129, 140, 248, 0.5);
+  color: #c7d2fe;
+}
+.seat-platinum:hover:not(:disabled) {
+  background: rgba(129, 140, 248, 0.4);
+  transform: scale(1.1);
+}
+
+.seat-selected {
+  background: #22c55e !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+  transform: scale(1.12);
+}
+
+.seat-locked {
+  background: #eab308 !important;
+  border-color: #ca8a04 !important;
+  color: #000000 !important;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.seat-booked {
+  background: #334155 !important;
+  border-color: #1e293b !important;
+  color: #64748b !important;
+  cursor: not-allowed;
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+/* Digital Ticket Styles */
+.ticket-container {
+  background: #111827;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-notch-left, .ticket-notch-right {
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket-notch-left {
+  left: -14px;
+}
+
+.ticket-notch-right {
+  right: -14px;
+}
+
+/* Hero Carousel */
+.hero-backdrop {
+  height: 520px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(11, 15, 25, 0.95) 0%,
+    rgba(11, 15, 25, 0.75) 50%,
+    rgba(11, 15, 25, 0.3) 100%
+  ),
+  linear-gradient(
+    to top,
+    rgba(11, 15, 25, 1) 0%,
+    transparent 50%
+  );
+}
